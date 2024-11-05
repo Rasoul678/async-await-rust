@@ -1,3 +1,13 @@
+mod async_counting;
+mod async_with_join;
+mod get_page_title;
+mod async_message_passing;
+
+pub use async_counting::async_counting;
+pub use async_with_join::async_with_join;
+pub use get_page_title::get_page_title;
+pub use async_message_passing::async_message_passing;
+
 use std::{future::Future, pin::pin};
 
 use futures::future;
@@ -37,8 +47,8 @@ where
     let f2 = pin!(f2);
 
     match future::select(f1, f2).await {
-        Either::Left((a, _f2)) => Either::Left(a),
-        Either::Right((b, _f1)) => Either::Right(b),
+        Either::Left((a, _f1)) => Either::Left(a),
+        Either::Right((b, _f2)) => Either::Right(b),
     }
 }
 
