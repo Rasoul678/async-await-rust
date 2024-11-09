@@ -1,6 +1,6 @@
 use lib::{
     async_counting, async_message_passing, async_pin_macro, async_race, async_with_join,
-    get_page_title, timeout,
+    get_page_title, streams, timeout,
 };
 
 fn main() {
@@ -11,5 +11,6 @@ fn main() {
     // async_message_passing();
     // async_pin_macro();
     // async_race();
-    timeout();
+    // timeout();
+    streams();
 }

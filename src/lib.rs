@@ -1,17 +1,19 @@
 mod async_counting;
-mod async_with_join;
-mod get_page_title;
 mod async_message_passing;
 mod async_pin_macro;
 mod async_race;
+mod async_with_join;
+mod get_page_title;
+mod streams;
 mod timeout;
 
 pub use async_counting::async_counting;
-pub use async_with_join::async_with_join;
-pub use get_page_title::get_page_title;
 pub use async_message_passing::async_message_passing;
 pub use async_pin_macro::async_pin_macro;
 pub use async_race::async_race;
+pub use async_with_join::async_with_join;
+pub use get_page_title::get_page_title;
+pub use streams::streams;
 pub use timeout::timeout;
 
 use std::{future::Future, pin::pin};
